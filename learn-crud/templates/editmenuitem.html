@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>{{item.restaurant.name}}</h1>
+  <p>Edit Menu Item</p>
+  <form action="{{ url_for('editMenuItem', restaurant_id=restaurant_id, menu_id=item.id) }}" method='POST'>
+    <input type='text' size='12' name='price' placeholder="{% if item.price[0] != '$' %}${% endif %}{{ item.price }}">
+    <input type='text' size='30' name='name' placeholder="{{ item.name }}"><br>
+    <input type='text' size='50' name='description' placeholder="{{ item.description }}">
+    <input type="submit" value="Edit">
+  </form>
+  <a href="{{ url_for('restaurantMenu', restaurant_id=item.restaurant.id) }}">Cancel</a>
+</body>
+</html>

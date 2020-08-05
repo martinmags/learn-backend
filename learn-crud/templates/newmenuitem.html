@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>{{restaurant.name}}</h1>
+  <p>What is your new menu item?</p>
+  <a href=" {{ url_for('restaurantMenu', restaurant_id=restaurant.id) }}"></a>
+  <form action="{{ url_for('newMenuItem', restaurant_id=restaurant.id) }}" method='POST'>
+    <input type="text" size="30" name="name" placeholder="Enter name:"><br>
+    <input type="text" size="12" name="price" placeholder="Enter price ($):"><br>
+    <input type="text" size="30" name="description" placeholder="Enter description:"><br>
+    <input type="submit" value="Create">
+  </form>
+  <a href="{{ url_for('restaurantMenu', restaurant_id=restaurant.id) }}">Cancel</a>
+</body>
+</html>

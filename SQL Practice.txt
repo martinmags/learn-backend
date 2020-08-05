@@ -1,0 +1,39 @@
+SQL Practice
+
+City
+Field           Type    
+ID              NUMBER
+NAME            VARCHAR2(17)
+COUNTRYCODE     VARCHAR2(3)
+DISTRICT        VARCHAR2(20)
+POPULATION      NUMBER
+
+======================================================================
+Query all columns for all American cities in CITY with populations
+larger than 100,000 (Countrycode for America is USA)
+
+
+SELECT *
+FROM CITY 
+WHERE POPULATION > 100,000 and COUNTRYCODE = 'USA';
+
+=======================================================================
+Query the names of all American cities in CITY with populations
+larger than 120,000.
+
+SELECT NAMES
+FROM CITY
+WHERE POPULATION > 120,000 and COUNTRYCODE = 'USA';
+
+=======================================================================
+Query all columns for every row in the CITY table
+
+SELECT *
+FROM CITY;
+
+=======================================================================
+Query all columns in for a city in CITY with the ID = 1661
+
+SELECT *
+FROM CITY
+WHERE ID = 1661;
